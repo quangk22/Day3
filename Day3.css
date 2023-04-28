@@ -1,0 +1,131 @@
+:root{
+   --pink-color: #e26e70; 
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+    font-family: sans-serif;
+    background-image: linear-gradient(45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100%);
+}
+
+.open-modal-btn{
+    padding: 20px 40px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 25px;
+
+}
+.open-modal-btn::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    border-radius: 50px;
+    box-shadow: 0 0 0 0 #fff;
+    animation: pulse 0.8s infinite;
+  }
+  .modal-header i{
+    padding: 10px 10px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 100%;
+    font-size: 20px;
+    color: black;
+    transition: transform 0.2s ease-in-out;
+  }
+  .modal-header i:hover{
+    background: red;
+    transform: scale(1.2);
+  }
+.modal{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+}
+.modal-inner{
+    width: 400px;
+    position: relative;
+    top: 35%;
+    margin: auto;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: modalShow 0.4s linear ;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--pink-color);
+    color: white;
+
+}
+.modal-body{
+    padding: 15px;
+
+}
+.modal-body h2{
+    color: var(--pink-color);
+    margin-bottom: 10px;
+}
+.modal-footer{
+    padding: 15px;
+    text-align: right;
+}
+.modal-footer button{
+    padding: 10px 20px;
+    color: white;
+    background: var(--pink-color);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: transform 0.2s ease-in-out;
+}
+.modal-footer button:hover{
+    background: red;
+    transform: scale(1.2);
+  }
+.hide{
+    display: none;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+      }
+      25% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 0 20px rgba(255, 165, 0, 0.4);
+      }
+      75% {
+        box-shadow: 0 0 0 30px rgba(255, 255, 0, 0.4);
+      }
+      100% {
+        box-shadow: 0 0 0 40px rgba(0, 255, 0, 0.4)
+    }
+  }
+@keyframes modalShow {
+   from{
+    top: -200px;
+    opacity: 0;
+   }
+    to{
+        top: 35%;
+        opacity: 1;
+    }
+}

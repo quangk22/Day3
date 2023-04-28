@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Show</title>
+    <link rel="stylesheet" href="Day3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <button class="open-modal-btn">Open Modal</button>
+   <div class="modal hide">
+    <div class="modal-inner">
+        <div class="modal-header">
+            <p>21 DAYS FRONTEND</p>
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="modal-body">
+            <h2>Xin chào</h2>
+            <p>Cảm ơn bạn đã click vào, chúc bạn 1 ngày vui vẻ.</p>
+        </div>
+        <div class="modal-footer">
+            <button>Close</button>
+        </div>
+    </div>
+   </div>
+
+    </div>
+</body>
+<script>
+    var btnOpen = document.querySelector('.open-modal-btn')
+    var modal = document.querySelector('.modal')
+    var iconClose = document.querySelector('.modal-header i')
+    var btnClose = document.querySelector('.modal-footer button')
+
+    function toggleModal(e) {
+        modal.classList.toggle('hide')
+    }
+
+    btnOpen.addEventListener('click', toggleModal)
+    btnClose.addEventListener('click', toggleModal)
+    iconClose.addEventListener('click', toggleModal)
+    modal.addEventListener('click', function (e) {
+        if (e.target == e.currentTarget) {
+            toggleModal()
+        }
+    })
+</script>
+
+</html>
